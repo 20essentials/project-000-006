@@ -1,0 +1,106 @@
+html, body, .first-container {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+.first-container {
+  background-color: transparent;
+  padding: 1rem;
+  display: flex;
+  column-gap: 1rem;
+
+  .left,
+  .right {
+    flex-basis: 50%;
+    display: grid;
+    gap: 1rem;
+  }
+
+  .left {
+    grid-template-areas: 'num1 num2 num2'
+    'num1 num3 num5'
+    'num4 num4 num5';
+    
+
+    .item-001 {
+      grid-area: num1;
+    }
+    .item-002 {
+      grid-area: num2;
+    }
+    .item-003 {
+      grid-area: num3;
+    }
+    .item-004 {
+      grid-area: num4;
+    }
+    .item-005 {
+      grid-area: num5;
+    }
+  }
+
+  .right {
+    grid-template-areas: 'num6 num7 num7'
+    'num6 num8 num10'
+    'num9 num9 num10';
+
+    .item-006 {
+      grid-area: num6;
+    }
+    .item-007 {
+      grid-area: num7;
+    }
+    .item-008 {
+      grid-area: num8;
+    }
+    .item-009 {
+      grid-area: num9;
+    }
+    .item-010 {
+      grid-area: num10;
+    }
+  }
+
+
+
+  .unItem {
+    background-color: black;
+    width: 100%;
+    height: 100%;
+    border-radius: 30px;
+    background-position: center;
+    background-size: cover;
+  }
+
+  .unItem:focus {
+    outline: 8px double lime;
+  }
+}
+
+@media (width <= 1000px) and (orientation: portrait) {
+  .first-container {
+    flex-direction: column;
+    column-gap: initial;
+    row-gap: 1rem;
+
+    .unItem {
+      border-radius: 20px;
+    }
+  }
+  
+}
+
+@media (width <= 1200px) and (orientation: landscape) {
+  .first-container {
+
+
+    .unItem {
+      border-radius: 20px;
+    }
+  }
+}
